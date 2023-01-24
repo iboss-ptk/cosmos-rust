@@ -5,6 +5,7 @@
 ///           Foo some_parameter = 1;
 ///           PageRequest pagination = 2;
 ///   }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PageRequest {
     /// key is a value returned in PageResponse.next_key to begin
@@ -27,11 +28,6 @@ pub struct PageRequest {
     /// is set.
     #[prost(bool, tag = "4")]
     pub count_total: bool,
-    /// reverse is set to true if results are to be returned in the descending order.
-    ///
-    /// Since: cosmos-sdk 0.43
-    #[prost(bool, tag = "5")]
-    pub reverse: bool,
 }
 /// PageResponse is to be embedded in gRPC response messages where the
 /// corresponding request message has used PageRequest.
@@ -40,6 +36,7 @@ pub struct PageRequest {
 ///           repeated Bar results = 1;
 ///           PageResponse page = 2;
 ///   }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PageResponse {
     /// next_key is the key to be passed to PageRequest.key to

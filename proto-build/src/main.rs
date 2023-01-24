@@ -26,7 +26,7 @@ const COSMOS_SDK_REV: &str = "v0.45.4";
 const IBC_REV: &str = "v3.0.0";
 
 /// The wasmd commit or tag to be cloned and used to build the proto files
-const WASMD_REV: &str = "v0.23.0";
+const WASMD_REV: &str = "v0.30.0";
 
 // All paths must end with a / and either be absolute or include a ./ to reference the current
 // working directory.
@@ -81,7 +81,7 @@ fn main() {
     fs::create_dir_all(&temp_ibc_dir).unwrap();
     fs::create_dir_all(&temp_wasmd_dir).unwrap();
 
-    update_submodules();
+    // update_submodules();
     output_sdk_version(&temp_sdk_dir);
     output_ibc_version(&temp_ibc_dir);
     output_wasmd_version(&temp_wasmd_dir);
